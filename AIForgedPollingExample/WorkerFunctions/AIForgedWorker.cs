@@ -73,11 +73,11 @@ namespace AIForgedPollingExample.WorkerFunctions
                     //Get document extraction results in a traversible hierarchy structure
                     var docResultsHierarchy = await _aiforgedClient.GetDocumentDataHierarchyAsync(doc);
 
-                    //Get the first Document Parameter result matching a given Parameter Definition Id
-                    var result = _aiforgedClient.GetResultRecursive(docResultsHierarchy, 212751);
+                    //Get the first Document Parameter result matching a given Parameter Definition Id (substitue 0 with your parameter definition Id)
+                    var result = _aiforgedClient.GetResultRecursive(docResultsHierarchy, 0);
 
-                    //Get all Document Parameter results matching a given Parameter Definition Id
-                    var results = _aiforgedClient.GetResultsRecursive(docResultsHierarchy, 212751);
+                    //Get all Document Parameter results matching a given Parameter Definition Id (substitue 0 with your parameter definition Id)
+                    var results = _aiforgedClient.GetResultsRecursive(docResultsHierarchy, 0);
 
                     //Update our document status server side to indicate processing is complete
                     await _aiforgedClient.UpdateDocumentStatusAsync(doc, DocumentStatus.CustomProcessed, "Hello from Skills Sharing Session 1");
